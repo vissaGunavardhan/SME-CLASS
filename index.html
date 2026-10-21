@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple employee management dashboard built with HTML, CSS and JavaScript.">
+  <title>EmployeeHub | Employee Management System</title>
+  <link rel="stylesheet" href="employee.css">
+  <script src="employee.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>EmployeeHub</h2>
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="#dashboard">Dashboard</a>
+      <a class="nav-link" href="#employees">Employees</a>
+      <a class="nav-link" href="#departments">Departments</a>
+    </nav>
+    <p class="sidebar-note">Employee management made simple.</p>
+  </aside>
+
+  <main class="main" id="dashboard">
+    <header class="page-header">
+      <div><p class="eyebrow">WORKSPACE</p><h1>Employee Management System</h1>
+      <p class="subtitle">Manage your team in one place.</p></div>
+    </header>
+
+    <section class="cards" aria-label="Dashboard summary">
+      <article class="card"><h2>Total Employees</h2><p class="metric" id="total">0</p></article>
+      <article class="card" id="departments"><h2>Departments</h2><p class="metric" id="department-total">4</p></article>
+      <article class="card"><h2>System Status</h2><p class="metric status">Active</p></article>
+    </section>
+
+    <section class="employee-section" id="employees">
+      <div class="section-heading">
+        <div><p class="eyebrow">PEOPLE</p><h2>Employee Directory</h2></div>
+        <button type="button" id="show-form" class="primary-button">+ Add Employee</button>
+      </div>
+
+      <form id="employee-form" hidden>
+        <h3 id="form-title">Add employee</h3>
+        <div class="form-grid">
+          <label>Full name<input type="text" id="emp-name" placeholder="e.g. Priya Sharma" maxlength="80" required></label>
+          <label>Salary (₹)<input type="number" id="emp-salary" placeholder="e.g. 45000" min="0" step="1" required></label>
+          <label>Age<input type="number" id="emp-age" placeholder="e.g. 28" min="18" max="100" required></label>
+          <label>Department<select id="emp-department" required>
+            <option value="IT">IT</option><option value="HR">HR</option>
+            <option value="Finance">Finance</option><option value="Marketing">Marketing</option>
+          </select></label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="primary-button" id="save-button">Save Employee</button>
+          <button type="button" id="cancel-form" class="secondary-button">Cancel</button>
+        </div>
+        <p class="form-message" id="form-message" role="status"></p>
+      </form>
+
+      <div class="toolbar">
+        <label class="search-label" for="search">Search employees</label>
+        <input type="search" id="search" placeholder="Search by name or ID…">
+        <label class="sr-only" for="department-filter">Filter by department</label>
+        <select id="department-filter">
+          <option value="All">All departments</option><option value="IT">IT</option>
+          <option value="HR">HR</option><option value="Finance">Finance</option><option value="Marketing">Marketing</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Salary</th><th scope="col">Age</th><th scope="col">Department</th><th scope="col">Actions</th></tr></thead>
+          <tbody id="employee-list"><tr><td colspan="6" class="empty-state">Loading employees…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="data-note">Employee data is saved in this browser using local storage.</p>
+    </section>
+    <footer>EmployeeHub · HTML, CSS and JavaScript</footer>
+  </main>
+</body>
+</html>

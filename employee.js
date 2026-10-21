@@ -49,8 +49,16 @@ function loadEmployees() {
       renderEmployees();
     })
     .catch((error) => {
-      console.warn("Remote employee data unavailable; starting with an empty directory.", error);
-      if (localStorage.getItem(STORAGE_KEY) === null) employees = [];
+      console.warn("Remote employee data unavailable; loading initial sample directory.", error);
+      if (localStorage.getItem(STORAGE_KEY) === null) {
+        employees = [
+          { id: 1, employee_name: "Priya Sharma", employee_salary: 75000, employee_age: 28, department: "IT" },
+          { id: 2, employee_name: "Rajesh Kumar", employee_salary: 92000, employee_age: 35, department: "Finance" },
+          { id: 3, employee_name: "Ananya Patel", employee_salary: 58000, employee_age: 26, department: "HR" },
+          { id: 4, employee_name: "Vikram Singh", employee_salary: 64000, employee_age: 31, department: "Marketing" }
+        ].map(normalizeEmployee);
+        saveEmployees();
+      }
       renderEmployees();
     });
 }
