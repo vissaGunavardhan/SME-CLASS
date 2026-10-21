@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Callback</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h2 id="text">Hello Students!</h2>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#btn").click(function() {
+
+                $("#text").hide(2000, function() {
+                    alert("The text is now hidden!");
+                });
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

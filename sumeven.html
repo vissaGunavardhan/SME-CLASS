@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Even Numbers Sum</title>
+</head>
+<body>
+    <h1>For Loops</h1>
+    <p>Sum of even no. btw 1 to 50</p>
+    <p id="demo">Hello!</p>
+
+    <script>
+        let sum = 0;
+        let t = "";
+
+        for(let i = 2; i <= 50; i = i + 2) {
+            sum = sum + i;
+        }
+
+        t = "Sum of even numbers = " + sum;
+        document.getElementById("demo").innerHTML = t;
+    </script>
+</body>
+</html>

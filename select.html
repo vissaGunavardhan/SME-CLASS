@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Simple Calculator</h3>
+<p id="demo"></p>
+
+<script>
+let a =prompt("enter a:");
+let b = prompt("enter b:");
+let operator = prompt("enter operator:");
+
+switch (operator) {
+    case "+":
+        document.getElementById("demo").innerHTML = a + b;
+        break;
+
+    case "-":
+        document.getElementById("demo").innerHTML = a - b;
+        break;
+
+    case "*":
+        document.getElementById("demo").innerHTML = a * b;
+        break;
+
+    case "/":
+        document.getElementById("demo").innerHTML = a / b;
+        break;
+}
+</script>
+
+
+
+</body>
+</html>

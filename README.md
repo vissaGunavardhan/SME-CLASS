@@ -1,49 +1,92 @@
-# EmployeeHub — Employee Management System
+# 🚀 SME-CLASS — Complete Project & Lecture Collection
 
-A responsive employee directory built with plain HTML, CSS, and JavaScript.
+A consolidated, single-folder collection containing the **EmployeeHub Management System Project** alongside **50+ HTML, CSS, JavaScript, and jQuery Lecture Exercises**.
 
-## Features
-- Dashboard summary showing employee count and departments
-- Add, edit, and delete employees
-- Search by employee name or ID
-- Filter by department
-- Browser persistence with `localStorage`
-- Optional sample-data API; the app still works when that service is unavailable
-- Responsive layout for desktop and mobile
-- No build tools or package installation required
+---
 
-## Project files
-- `employee.html` — page structure
-- `employee.css` — styles and responsive layout
-- `employee.js` — employee CRUD, search, filtering, and storage
-- `README.md` — project information and setup instructions
-- `.gitignore` — common files to exclude from Git
+## 🌟 Featured Project: EmployeeHub
 
-## Run locally
-1. Download or clone this repository.
-2. Keep all three application files in the same folder.
-3. Open `employee.html` in a browser. For the most reliable behavior, use VS Code with the **Live Server** extension and select **Open with Live Server**.
-4. Add an employee to test saving, editing, deleting, searching, and department filtering.
+A responsive employee management application built with pure HTML, CSS, and Vanilla JavaScript:
+* **`employee.html`**: Interactive directory dashboard with live summary KPI cards and forms
+* **`employee.css`**: Modern sidebar and responsive table layout
+* **`employee.js`**: Complete CRUD (Add, Edit, Delete), search filtering, department filtering, and browser persistence (`localStorage`)
+* **Launch:** Open `employee.html` in your browser or click **Launch EmployeeHub →** on the dashboard.
 
-Data is stored in the current browser and device. Clearing site data or switching browsers will remove or not show that saved data.
+---
 
-## Publish to GitHub
-1. Sign in at https://github.com and create a **new repository** named `employee-management-system`.
-2. Choose Public or Private. Do not initialize it with a README if you plan to push this folder as-is.
-3. Install Git from https://git-scm.com/downloads if it is not already installed.
-4. Open a terminal in this project folder and run:
+## 📑 Complete Curriculum & Lecture Exercises Index
 
-```bash
-git init
-git add employee.html employee.css employee.js README.md .gitignore
-git commit -m "Fix employee management system"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/employee-management-system.git
-git push -u origin main
-```
+All files can be explored interactively via the portal [`index.html`](index.html):
 
-Replace `YOUR-USERNAME` with your GitHub username. If Git says a remote named `origin` already exists, run `git remote set-url origin https://github.com/YOUR-USERNAME/employee-management-system.git` instead of the `git remote add` command.
+### 1. 🧮 JavaScript Fundamentals & Algorithms
+| File | Topic / Description |
+| :--- | :--- |
+| `evenodd.html` | Check whether a number is Even or Odd |
+| `negpos.html` | Determine if a number is Positive or Negative |
+| `factorial.html` | Calculate the factorial of a given number |
+| `fibonacci series.html` | Generate the Fibonacci sequence |
+| `vowel.html` | Check for vowels in user input characters |
+| `min.html` | Find the minimum number among inputs |
+| `loop.html` | `for` loop iterations and counters |
+| `while.html` | `while` loop implementation |
+| `dowhile.html` | `do-while` loop examples |
+| `days.html` | Day of the week switch/conditional logic |
+| `agecategory.html` | Age bracket categorization logic |
+| `array.html` | Array declarations, indexing, and manipulations |
+| `sum100.html` | Sum calculation up to 100 |
+| `sumarray.html` | Sum of all elements in an array |
+| `sumeven.html` | Sum of even numbers in a range |
+| `callback.html` | JavaScript callback functions and execution flow |
 
-## Notes
-- This is a front-end demo, not a secure multi-user HR system. `localStorage` data is only available in the current browser.
-- The optional external demo API may be rate-limited or unavailable. The app falls back to an empty local directory.
+### 2. 🖱️ DOM Events & Interactions
+| File | Topic / Description |
+| :--- | :--- |
+| `clickevent.html` | Handling single `click` events |
+| `dblclick.html` | Handling `dblclick` (double click) events |
+| `mouseenter.html` | `mouseenter` hover interactions |
+| `mouseleave.html` | `mouseleave` hover release effects |
+| `change.html` | Form input `change` listener |
+| `focus.html` | Input element `focus` and blur states |
+| `submit.html` | Handling form `submit` events |
+
+### 3. 🎨 jQuery Effects & Animations
+| File | Topic / Description |
+| :--- | :--- |
+| `jqueryselector.html` | Basic jQuery element and class selectors |
+| `attributeselect.html` | Attribute-based selector targeting |
+| `hideshow.html` | jQuery `.hide()` and `.show()` toggle methods |
+| `fadein.html` | `.fadeIn()` visual transition |
+| `fadeto.html` | `.fadeTo()` custom opacity adjustments |
+| `fadetoggle.html` | `.fadeToggle()` dynamic display toggle |
+| `slide.html` | `.slideUp()`, `.slideDown()`, and `.slideToggle()` |
+| `animate.html` | Custom CSS property animations with `.animate()` |
+| `chaining.html` | Method chaining in jQuery |
+| `stop.html` | Cancelling in-flight jQuery animation queues |
+
+### 4. 📝 Forms & UI Components
+| File | Topic / Description |
+| :--- | :--- |
+| `formvalid.html` | Form validation and constraint checking |
+| `Sign.html` / `signup.html` | User registration / Sign-up form |
+| `signup.css` | Styling for registration pages |
+| `login.html` | User authentication login interface |
+| `login.css` | Styling for login screens |
+| `description.html` / `description.css` | Product description layout |
+| `para.html` / `dot.html` / `display.html` | Text formatting and CSS display rules |
+
+### 5. 🚀 Practice Projects & Lab Exercises
+| File | Topic / Description |
+| :--- | :--- |
+| `canteen.html` | Canteen ordering and item selection prototype |
+| `student.html` | Student record management interface |
+| `search.html` | Search filter implementation |
+| `practice.html` | Consolidated lab practice sheet |
+| `test4.html` / `testa.html` | Class tests and assessment exercises |
+
+---
+
+## 💻 How to Run
+
+1. Open [`index.html`](index.html) in your browser to launch the central interactive dashboard.
+2. Search, filter, or click any project card to open it immediately.
+3. Open [`employee.html`](employee.html) directly to run the EmployeeHub management system.

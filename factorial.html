@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Factorial</title>
+</head>
+<body>
+    <h1>For Loops</h1>
+    <p>Factorial no.</p>
+    <p id="demo">Hello!</p>
+
+    <script>
+        let num = 5;
+        let fact = 2;
+        let t = "";
+
+        for(let i = 1; i <= num; i++) {
+            fact = fact * i;
+        }
+
+        t = "Factorial = " + fact;
+        document.getElementById("demo").innerHTML = t;
+    </script>
+</body>
+</html>

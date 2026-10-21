@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hide and Show</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2 id="text">Welcome to jQuery!</h2>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+<script>
+$(document).ready(function() {
+
+    $("#hide").click(function() {
+        $("#text").hide();
+    });
+
+    $("#show").click(function() {
+        $("#text").show();
+    });
+
+});
+</script>
+
+</body>
+</html>

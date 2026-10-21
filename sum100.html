@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum of Numbers</title>
+</head>
+<body>
+    <h1>for Loops</h1>
+    <p>Sum of First 100 no.</p>
+    <p id="demo">Hello!</p>
+
+    <script>
+        let sum = 0;
+        let t = "";
+
+        for(let i = 1; i <= 100; i++) {
+            sum = sum + i;
+        }
+
+        t = "Sum = " + sum;
+        document.getElementById("demo").innerHTML = t;
+    </script>
+</body>
+</html>

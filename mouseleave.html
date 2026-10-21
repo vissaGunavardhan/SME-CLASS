@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Leave</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<p id="text">Move your mouse over me!</p>
+
+<script>
+$(document).ready(function() {
+    $("#text").mouseenter(function() {
+        $(this).css("color", "blue");
+    });
+
+    $("#text").mouseleave(function() {
+        $(this).css("color", "red");
+    });
+});
+</script>
+
+</body>
+</html>

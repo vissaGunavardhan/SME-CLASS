@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Event</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<button id="btn">Click Me</button>
+<p id="text">Hello World!</p>
+
+<script>
+$(document).ready(function() {
+    $("#btn").click(function() {
+        $("#text").hide();
+    });
+});
+</script>
+
+</body>
+</html>

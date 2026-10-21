@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array For Each</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+<p id="demo1"></p>
+    <script>
+        let arr = [10, 20, 30, 40, 50];
+
+        arr.forEach(function(value) {
+            document.getElementById("demo").innerHTML += value + "<br>";
+        });
+   
+        const person={
+        firstName:"John",
+        lastName:"Doe",
+        age:50,
+        fullName:function(){
+            return this.firstName+" "+this.lastName;
+        }
+        };
+          document.getElementById("demo1").innerHTML =
+            person.fullName() + "<br>" + person.age;
+
+    
+    </script>
+
+</body>
+</html>

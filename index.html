@@ -1,79 +1,394 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A simple employee management dashboard built with HTML, CSS and JavaScript.">
-  <title>EmployeeHub | Employee Management System</title>
-  <link rel="stylesheet" href="employee.css">
-  <script src="employee.js" defer></script>
-</head>
-<body>
-  <aside class="sidebar">
-    <h2>EmployeeHub</h2>
-    <nav aria-label="Main navigation">
-      <a class="nav-link active" href="#dashboard">Dashboard</a>
-      <a class="nav-link" href="#employees">Employees</a>
-      <a class="nav-link" href="#departments">Departments</a>
-    </nav>
-    <p class="sidebar-note">Employee management made simple.</p>
-  </aside>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <main class="main" id="dashboard">
-    <header class="page-header">
-      <div><p class="eyebrow">WORKSPACE</p><h1>Employee Management System</h1>
-      <p class="subtitle">Manage your team in one place.</p></div>
+    <title>SME Projects | Project Collection</title>
+
+    <meta name="description"
+          content="A collection of SME HTML, CSS, JavaScript and jQuery practice projects.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #f4f7fb;
+            --card: #ffffff;
+            --text: #172033;
+            --muted: #64748b;
+            --primary: #2563eb;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            color: white;
+            padding: 42px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: clamp(28px, 5vw, 44px);
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #dbeafe;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 28px 18px 50px;
+        }
+
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .count {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 17px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: white;
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 18px;
+        }
+
+        .search-box:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px #2563eb20;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 25px;
+        }
+
+        .filter-btn {
+            border: 1px solid var(--border);
+            padding: 9px 15px;
+            border-radius: 30px;
+            background: white;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 17px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 155px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: var(--card);
+            text-decoration: none;
+            color: var(--text);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px #0f172a12;
+            border-color: #93c5fd;
+        }
+
+        .project-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 16px;
+            overflow-wrap: anywhere;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        .empty {
+            display: none;
+            padding: 35px 15px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px 15px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+            header {
+                padding: 32px 16px;
+            }
+
+            .container {
+                padding: 22px 13px 35px;
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 11px;
+            }
+
+            .project-card {
+                padding: 14px;
+                min-height: 145px;
+            }
+
+            .project-card h3 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SME Projects</h1>
+        <p>My HTML, CSS, JavaScript & jQuery Practice Collection</p>
     </header>
 
-    <section class="cards" aria-label="Dashboard summary">
-      <article class="card"><h2>Total Employees</h2><p class="metric" id="total">0</p></article>
-      <article class="card" id="departments"><h2>Departments</h2><p class="metric" id="department-total">4</p></article>
-      <article class="card"><h2>System Status</h2><p class="metric status">Active</p></article>
-    </section>
+    <main class="container">
 
-    <section class="employee-section" id="employees">
-      <div class="section-heading">
-        <div><p class="eyebrow">PEOPLE</p><h2>Employee Directory</h2></div>
-        <button type="button" id="show-form" class="primary-button">+ Add Employee</button>
-      </div>
-
-      <form id="employee-form" hidden>
-        <h3 id="form-title">Add employee</h3>
-        <div class="form-grid">
-          <label>Full name<input type="text" id="emp-name" placeholder="e.g. Priya Sharma" maxlength="80" required></label>
-          <label>Salary (₹)<input type="number" id="emp-salary" placeholder="e.g. 45000" min="0" step="1" required></label>
-          <label>Age<input type="number" id="emp-age" placeholder="e.g. 28" min="18" max="100" required></label>
-          <label>Department<select id="emp-department" required>
-            <option value="IT">IT</option><option value="HR">HR</option>
-            <option value="Finance">Finance</option><option value="Marketing">Marketing</option>
-          </select></label>
+        <div style="margin-bottom: 24px; padding: 20px 24px; background: linear-gradient(135deg, #0f172a, #1e3a8a); border-radius: 14px; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 14px rgba(15,23,42,0.15);">
+            <div style="display:flex; align-items:center; gap: 14px;">
+                <span style="font-size: 34px;">👥</span>
+                <div>
+                    <h3 style="margin:0; font-size: 19px; color: #ffffff;">Featured Project: EmployeeHub</h3>
+                    <p style="margin:3px 0 0; color: #bfdbfe; font-size: 13px;">Full Employee Management System with Add, Edit, Delete, Search &amp; Department Filters</p>
+                </div>
+            </div>
+            <a href="employee.html" style="background: #2563eb; color: white; padding: 11px 20px; border-radius: 9px; text-decoration: none; font-weight: bold; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(37,99,235,0.3);">Launch EmployeeHub →</a>
         </div>
-        <div class="form-actions">
-          <button type="submit" class="primary-button" id="save-button">Save Employee</button>
-          <button type="button" id="cancel-form" class="secondary-button">Cancel</button>
+
+        <div class="summary">
+            <h2>All Projects</h2>
+            <span class="count" id="projectCount">Loading projects...</span>
         </div>
-        <p class="form-message" id="form-message" role="status"></p>
-      </form>
 
-      <div class="toolbar">
-        <label class="search-label" for="search">Search employees</label>
-        <input type="search" id="search" placeholder="Search by name or ID…">
-        <label class="sr-only" for="department-filter">Filter by department</label>
-        <select id="department-filter">
-          <option value="All">All departments</option><option value="IT">IT</option>
-          <option value="HR">HR</option><option value="Finance">Finance</option><option value="Marketing">Marketing</option>
-        </select>
-      </div>
+        <input
+            type="search"
+            id="searchInput"
+            class="search-box"
+            placeholder="Search projects... e.g. employee, login, array, animation"
+            aria-label="Search projects"
+        >
 
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th scope="col">ID</th><th scope="col">Name</th><th scope="col">Salary</th><th scope="col">Age</th><th scope="col">Department</th><th scope="col">Actions</th></tr></thead>
-          <tbody id="employee-list"><tr><td colspan="6" class="empty-state">Loading employees…</td></tr></tbody>
-        </table>
-      </div>
-      <p class="data-note">Employee data is saved in this browser using local storage.</p>
-    </section>
-    <footer>EmployeeHub · HTML, CSS and JavaScript</footer>
-  </main>
+        <div class="filters" id="filters">
+            <button class="filter-btn active" data-category="All">All</button>
+            <button class="filter-btn" data-category="Project">Projects</button>
+            <button class="filter-btn" data-category="HTML">HTML</button>
+            <button class="filter-btn" data-category="JavaScript">JavaScript</button>
+            <button class="filter-btn" data-category="jQuery">jQuery</button>
+            <button class="filter-btn" data-category="Forms">Forms</button>
+            <button class="filter-btn" data-category="Effects">Effects</button>
+        </div>
+
+        <section class="project-grid" id="projectGrid"
+                 aria-label="SME project links">
+        </section>
+
+        <div class="empty" id="emptyMessage">
+            <h3>No projects found</h3>
+            <p>Try another search term.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        SME Projects Collection · Built with HTML, CSS and JavaScript
+    </footer>
+
+    <script>
+        // File names must match the files in your GitHub repository.
+        const projects = [
+            { name: "employee.html", category: "Project" },
+            { name: "#.html", category: "HTML" },
+            { name: "Sign.html", category: "Forms" },
+            { name: "agecategory.html", category: "JavaScript" },
+            { name: "animate.html", category: "Effects" },
+            { name: "array.html", category: "JavaScript" },
+            { name: "attributeselect.html", category: "jQuery" },
+            { name: "callback.html", category: "JavaScript" },
+            { name: "canteen.html", category: "HTML" },
+            { name: "chaining.html", category: "jQuery" },
+            { name: "change.html", category: "jQuery" },
+            { name: "clickevent.html", category: "JavaScript" },
+            { name: "days.html", category: "JavaScript" },
+            { name: "dblclick.html", category: "JavaScript" },
+            { name: "description.html", category: "HTML" },
+            { name: "display.html", category: "JavaScript" },
+            { name: "dot.html", category: "JavaScript" },
+            { name: "dowhile.html", category: "JavaScript" },
+            { name: "evenodd.html", category: "JavaScript" },
+            { name: "factorial.html", category: "JavaScript" },
+            { name: "fadein.html", category: "Effects" },
+            { name: "fadeto.html", category: "Effects" },
+            { name: "fadetoggle.html", category: "Effects" },
+            { name: "fibonacci series.html", category: "JavaScript" },
+            { name: "focus.html", category: "jQuery" },
+            { name: "formvalid.html", category: "Forms" },
+            { name: "hideshow.html", category: "Effects" },
+            { name: "jqueryselector.html", category: "jQuery" },
+            { name: "login.css", category: "HTML" },
+            { name: "login.html", category: "Forms" },
+            { name: "loop.html", category: "JavaScript" },
+            { name: "min.html", category: "JavaScript" },
+            { name: "mouseenter.html", category: "jQuery" },
+            { name: "mouseleave.html", category: "jQuery" },
+            { name: "para.html", category: "HTML" },
+            { name: "practice.html", category: "HTML" },
+            { name: "search.html", category: "Forms" },
+            { name: "select.html", category: "Forms" },
+            { name: "signup.css", category: "HTML" },
+            { name: "signup.html", category: "Forms" },
+            { name: "slide.html", category: "Effects" },
+            { name: "stop.html", category: "Effects" },
+            { name: "student.html", category: "Forms" },
+            { name: "submit.html", category: "Forms" },
+            { name: "sum100.html", category: "JavaScript" },
+            { name: "sumarray.html", category: "JavaScript" },
+            { name: "sumeven.html", category: "JavaScript" },
+            { name: "test4.html", category: "HTML" },
+            { name: "testa.html", category: "HTML" },
+            { name: "vowel.html", category: "JavaScript" },
+            { name: "while.html", category: "JavaScript" }
+        ];
+
+        const grid = document.getElementById("projectGrid");
+        const searchInput = document.getElementById("searchInput");
+        const count = document.getElementById("projectCount");
+        const emptyMessage = document.getElementById("emptyMessage");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+
+        let selectedCategory = "All";
+
+        function renderProjects() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+
+            const filtered = projects.filter(project => {
+                const matchesSearch =
+                    project.name.toLowerCase().includes(searchTerm);
+
+                const matchesCategory =
+                    selectedCategory === "All" ||
+                    project.category === selectedCategory;
+
+                return matchesSearch && matchesCategory;
+            });
+
+            grid.replaceChildren();
+
+            filtered.forEach(project => {
+                const link = document.createElement("a");
+                link.className = "project-card";
+
+                // Safely encode spaces in filenames for GitHub Pages.
+                link.href = encodeURIComponent(project.name).replace(
+                    /%2F/gi, "/"
+                );
+
+                const icon = document.createElement("span");
+                icon.className = "project-icon";
+                icon.textContent = project.name
+                    .replace(/\.[^.]+$/, "")
+                    .charAt(0).toUpperCase() || "P";
+
+                const title = document.createElement("h3");
+                title.textContent = project.name;
+
+                const description = document.createElement("p");
+                description.textContent =
+                    project.category + " · Open project →";
+
+                link.append(icon, title, description);
+                grid.appendChild(link);
+            });
+
+            count.textContent =
+                filtered.length + " of " + projects.length + " projects";
+
+            emptyMessage.style.display =
+                filtered.length === 0 ? "block" : "none";
+        }
+
+        searchInput.addEventListener("input", renderProjects);
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                selectedCategory = button.dataset.category;
+
+                filterButtons.forEach(item =>
+                    item.classList.toggle("active", item === button)
+                );
+
+                renderProjects();
+            });
+        });
+
+        renderProjects();
+    </script>
+
 </body>
 </html>

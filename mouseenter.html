@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Enter</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<p id="text">Move your mouse here!</p>
+
+<script>
+$(document).ready(function() {
+    $("#text").mouseenter(function() {
+        $(this).css("color", "blue");
+    });
+});
+</script>
+
+</body>
+</html>
